@@ -1,0 +1,10 @@
+open
+index.html    all things will be shown and a single page
+login/register option
+on clicking book an appointment and choosing any services we will be able to login and regitser if they are not
+otherwise open appointment page
+and last mei map hoga
+admin wle mei 
+ek mei new customers 
+and also
+review krne kaa

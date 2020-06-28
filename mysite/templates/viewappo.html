@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="ftco-section">
+    	<div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-counter danger">
+                       
+                        <span class="count-numbers">{{new}}</span>
+                        <span class="count-name">New Appointments</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-counter primary">
+                        
+                        <span class="count-numbers">{{total}}</span>
+                        <span class="count-name">Total Appointments</span>
+                    </div>
+                </div>
+
+            </div>
+            
+
+    	</div>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for data in datas %}
+                    <tr>
+                    <th scope="row">{{data.id}}</th>
+                    <td>{{data.customer}}</td>
+                    <td>{{data.service}}</td>
+                    <td>{{data.date}}</td>
+                    <td>{{data.time}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{data.status}}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="btn btn-info">
+                                
+                                <a class="dropdown-item" class="btn btn-success" href="{% url 'Accept' pk=data.pk %}">Accept</a>
+                                <a class="dropdown-item" class="btn btn-danger" href="{% url 'Decline' pk=data.pk %}">Decline</a>
+                            </div>
+                        </div>
+                    </td>
+                    </tr>   
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock  %}

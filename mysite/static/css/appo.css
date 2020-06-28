@@ -1,0 +1,69 @@
+
+.appointment_sec {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-top: 90px;
+    margin-bottom: 74px; }
+    .appointment_sec.home2 {
+      margin-bottom: 0; }
+      .appointment_sec.home2 .col-md-5 {
+        padding: 0; }
+  
+  .appoint_ment_form {
+    background-color: #ffffff;
+    padding: 42px;
+    text-align: center;
+    position: relative; }
+    .appoint_ment_form h4 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      color: #222222;
+      font-size: 35px;
+      padding-bottom: 24px; }
+    .appoint_ment_form p {
+      color: #767676;
+      font-size: 17px;
+      font-weight: 400;
+      font-family: "Roboto", sans-serif;
+      padding-bottom: 45px; }
+    .appoint_ment_form form {
+      width: 100%; }
+      .appoint_ment_form form input,
+      .appoint_ment_form form textarea {
+        width: 100%;
+        padding: 12px 24px;
+        background-color: #f9f9f9;
+        border: 1px solid #e3e3e3;
+        margin-bottom: 14px;
+        color: #767676;
+        font-size: 17px;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        outline: 0; }
+        .appoint_ment_form form input:focus,
+        .appoint_ment_form form textarea:focus {
+          outline: 0; }
+      .appoint_ment_form form .btn {
+        width: 100%;
+        background-color: #ff9703;
+        padding: 22px 0;
+        text-align: center;
+        color: #ffffff;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        font-size: 19px;
+        position: absolute;
+        left: 0;
+        bottom: -72px;
+        -ms-radius: 0;
+        -o-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0; }
+  

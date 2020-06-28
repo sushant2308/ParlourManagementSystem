@@ -1,0 +1,97 @@
+
+    
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+		
+		
+			
+    	<div class="container">
+    		<div class="row d-md-flex align-items-center">
+    			
+	    		<div class="col-md-6 appointment pl-md-5 ftco-animate">
+	    			<h3 class="mb-3" style="color:#000">Register</h3>
+					{% if messages %}
+						{% for message in messages  %}
+							<div class="alert alert-{{message.tags}}">{{message}}</div>
+
+						{% endfor %}
+					{% endif %}
+						<form class="form" method='POST'>
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">Your Name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										{{form.username}}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="email" class="cols-sm-2 control-label">Your Email</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+										{{form.email}}
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="form-group">
+								<label for="password" class="cols-sm-2 control-label">Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										{{form.password1}}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										{{form.password2}}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group ">
+								<button class="btn btn-lg btn-success btn-block" type="submit">Register</button>
+							</div>
+						
+					</form>
+					{% if form.errors %}
+						<div class="alert alert-danger">
+							<strong>{{form.errors}}</strong>
+						</div>
+					{% endif %}
+
+
+					<div class="mt-4">
+						<div class=="d-flex justify-content-center links">
+							Already a customer? <a href="{% url 'login' %}" class="ml-2">Login</a>
+						</div>
+
+					</div>
+					
+	    			
+             
+	    		</div>  
+			
+    		</div>
+    	</div>
+	
+    
+{% endblock  %}
+    
+    
+  
+
+  

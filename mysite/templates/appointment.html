@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ 	<section class="ftco-section ftco-appointment">
+    	<div class="container">
+    		<div class="row d-md-flex align-items-center">
+    			<div class="col-md-2"></div>
+	    		<div class="col-md-4 d-flex align-self-stretch ftco-animate">
+	    			<div class="appointment-info text-center p-5">
+	    				<div class="mb-4">
+	    					<h3 class="mb-3">Address</h3>
+		    				<p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+	    				</div>
+	    				<div class="mb-4">
+		    				<h3 class="mb-3">Phone</h3>
+		    				<p class="day"><strong>000 123 456</strong> or <strong>000 987 654</strong></p>
+	    				</div>
+	    				<div>
+		    				<h3 class="mb-3">Opening Hours</h3>
+		    				<p class="day"><strong>Monday - Friday</strong></p>
+		    				<span>08:00am - 09:00pm</span>
+	    				</div>
+	    			</div>
+	    		</div>
+			
+	    		<div class="col-md-6 appointment pl-md-5 ftco-animate">
+	    			<h3 class="mb-3">Appointments</h3>
+						{% if messages %}
+							{% for message in messages  %}
+								<div class="alert alert-{{message.tags}}">{{message}}</div>
+
+							{% endfor %}
+						{% endif %}
+	    			<form method='POST' class="appointment-form">
+                        {% csrf_token %}
+                        <div class="row form-group d-flex">
+                            <div class="col-md-6">
+								<i class="fa fa-calendar"></i>
+								{{ form.date }}
+                            </div>
+                            <div class="col-md-6">
+                                {{form.time}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        {{form.service}}
+                        </div>
+                        <div class="form-group">
+	 						<button class="btn btn-lg btn-success btn-block" type="submit">Book</button>
+                        </div>
+                    </form>
+						{% if form.errors %}
+						<div class="alert alert-danger">
+							<strong>{{form.errors}}</strong>
+						</div>
+					{% endif %}
+	    		</div>    			
+    		</div>
+    	</div>
+    </section>
+
+{% endblock  %}

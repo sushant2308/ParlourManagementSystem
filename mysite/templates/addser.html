@@ -1,0 +1,82 @@
+
+    
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+		
+		
+			
+    	<div class="container">
+    		<div class="row d-md-flex align-items-center">
+    			
+	    		<div class="col-md-6 appointment pl-md-5 ftco-animate">
+	    			<h3 class="mb-3" style="color:#000">Add service</h3>
+					{% if messages %}
+						{% for message in messages  %}
+							<div class="alert alert-{{message.tags}}">{{message}}</div>
+
+						{% endfor %}
+					{% endif %}
+						<form class="form" method='POST' enctype="multipart/form-data">
+							{% csrf_token %}
+ 
+							<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">Name of service</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										{{form.name}}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="email" class="cols-sm-2 control-label">Price</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+										{{form.price}}
+									</div>
+								</div>
+							</div>
+                            <div class="form-group">
+                                <div class="browse-button">
+                                    <i class="fa fa-pencil-alt"></i>
+                                    {{form.image}}
+                                </div>
+                            </div>
+                          
+
+
+
+							
+
+							<div class="form-group ">
+								<button class="btn btn-lg btn-info btn-block" type="submit">Add</button>
+							</div>
+						
+					</form>
+					{% if form.errors %}
+						<div class="alert alert-danger">
+							<strong>{{form.errors}}</strong>
+						</div>
+					{% endif %}
+
+
+				
+					
+	    			
+             
+	    		</div>  
+			
+    		</div>
+    	</div>
+	
+    
+{% endblock  %}
+    
+    
+  
+
+  

@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+
+		
+		<section class="ftco-section ftco-appointment">
+			<div class="container">
+				<div class="row d-md-flex align-items-center">
+					<div class="col-md-6 appointment pl-md-5 ftco-animate">
+						<h3 class="mb-3">Login</h3>
+						{% if messages %}
+							{% for message in messages  %}
+								<div class="alert alert-{{message.tags}}">{{message}}</div>
+
+							{% endfor %}
+						{% endif %}
+						<form class="form" method='POST'>
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">Your Name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<input type="text" class="form-control" name="username" id="name"  placeholder="Enter your Name"/>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="cols-sm-2 control-label">Password</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+										<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group ">
+								<button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
+							</div>
+									
+						</form>
+						<div class="mt-4">
+							<div class=="d-flex justify-content-center links">
+								Dont't Have an Account <a href="{% url 'register' %}" class="ml-2">Register</a>
+							</div>
+						</div>
+
+					</div>    			
+				</div>
+			</div>
+		</section>
+
+    
+{% endblock  %}  
+  
+
